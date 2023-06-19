@@ -21,7 +21,7 @@ The Raspberry Pi (any model with a 40-pin connector will do the jobs) will be co
 If you connect LED panels to the board, the connector J7 marked with "12V 5V GND" can be use to power these. Note that LED panels are usually not protected agaoinst wrong polarity and overvoltage. Therefore, make sure you connect to the correct voltage (usually these run at 5V) and polarity. 
 Multiple LED panels can either be daisy-chained (if the option is supported by the LED panel) or connected individually to the LED panel data outputs HUB75 A/B. Basically any LED panel with a HUB75 connector should work, but configuration might need to be adjusted.
 
-![Hardware connectors](dmdreader-hw.png)
+![Hardware connectors](images/dmdreader-hw.png)
 
 ## Software
 
