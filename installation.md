@@ -53,7 +53,11 @@ You should see the message "RP2040 programmed sucessfully" when the script progr
 ```
 cd
 git clone --recursive https://github.com/pinballpower/code_dmdreader
+cd code_dmdreader
+./install-pi-software.sh
 ```
+
+As the software 
 
 ### Configure config.txt
 
