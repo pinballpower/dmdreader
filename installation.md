@@ -57,6 +57,7 @@ cd
 git clone --recursive https://github.com/pinballpower/code_dmdreader
 cd code_dmdreader
 ./install-pi-software.sh
+./compile-pi.sh
 ```
 
 ### Configure config.txt
@@ -67,10 +68,36 @@ cd ~/code_dmdreader
 sudo reboot
 ```
 
-
 ## Testing
 
 ### Testing the DMD interface
+
+If the RP2040 has been programmed, the pinball's DMD interface is connected to the DMD interface port and DMDReader has been compiled successfully, you can try to read frames from the DMD interface:
+
+```
+cd ~/code_dmdreader
+./dmdreader samples/display-spi.json
+```
+
+You should get output like:
+
+```
+[2023-06-19 13:37:02.460452] [0xef7a8040] [info]    [readconfig] using configuration file samples/display-spi.json
+[2023-06-19 13:37:02.460748] [0xef7a8040] [info]    [spisource] connect to SPI via /dev/spidev0.0, speed=4000000
+[2023-06-19 13:37:02.461179] [0xef7a8040] [info]    [readconfig] successfully initialized input type spi
+[2023-06-19 13:37:02.461228] [0xef7a8040] [info]    [readconfig] successfully initialized processor frameinfo
+[2023-06-19 13:37:02.461406] [0xef7a8040] [info]    [readconfig] no services defined
+[2023-06-19 13:37:02.461519] [0xef7a8040] [info]    [dmdreader] hardware supports 4 threads
+[2023-06-19 13:37:02.465924] [0xef7a8040] [info]    [frameinfologger] got frame 128x32 4bpp, checksum f8ad8505
+[2023-06-19 13:37:02.483119] [0xef7a8040] [info]    [frameinfologger] got frame 128x32 4bpp, checksum de229abc
+[2023-06-19 13:37:02.515103] [0xef7a8040] [info]    [frameinfologger] got frame 128x32 4bpp, checksum 4c5e37fa
+[2023-06-19 13:37:02.563100] [0xef7a8040] [info]    [frameinfologger] got frame 128x32 4bpp, checksum 5d465498
+[2023-06-19 13:37:02.579095] [0xef7a8040] [info]    [frameinfologger] got frame 128x32 4bpp, checksum e00cb1bb
+[2023-06-19 13:37:02.611101] [0xef7a8040] [info]    [frameinfologger] got frame 128x32 4bpp, checksum 0323c1c3
+[2023-06-19 13:37:02.659096] [0xef7a8040] [info]    [frameinfologger] got frame 128x32 4bpp, checksum ee178549
+```
+
+This shows that the system can read data from the DMD interface.
 
 ### Test LED matrix (if you have one connected)
 ```
@@ -82,4 +109,7 @@ You need to adapt row and cols to the connected display. LED panel 1 (or both if
 
 Have a look at [LED panel configurations](ledconfigs.md) for known configurations for some LED panel types.
 
+## Next steps
 
+Great! The necessary hardware and software have been installed and are working. You can now go on configuring DMDReader for your specific use case.
+Have a look at the [DMDReader documentation](https://github.com/pinballpower/code_dmdreader/tree/main/doc)
