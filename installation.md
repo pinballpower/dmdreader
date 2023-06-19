@@ -50,14 +50,14 @@ You should see the message "RP2040 programmed sucessfully" when the script progr
 
 ### Install the DMDReader software
 
+Important notice: You won't be able to compile the software on a Pi with only 512MB RAM (like the Pi Zero or Pi 3A+). If you want to use it on a Pi like this, you need to do this step on a Pi with more memory.
+
 ```
 cd
 git clone --recursive https://github.com/pinballpower/code_dmdreader
 cd code_dmdreader
 ./install-pi-software.sh
 ```
-
-As the software 
 
 ### Configure config.txt
 
