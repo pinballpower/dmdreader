@@ -33,20 +33,40 @@ sudo apt-get update
 sudo apt-get -y dist-upgrade
 ```
 
+### Install the DMD interface software
+
+```
+cd
+sudo apt-get install -y git
+git clone https://github.com/pinballpower/code_dmd
+cd code_dmd
+scripts/install-software
+cd src
+./compile.sh
+./program-pico.sh
+```
+
+You should see the message "RP2040 programmed sucessfully" when the script program-pico.sh s cript finishes.
+
 ### Install the DMDReader software
 
 ```
-sudo apt-get install -y git
+cd
 git clone --recursive https://github.com/pinballpower/code_dmdreader
 ```
 
 ### Configure config.txt
 
 ```
-cd code_dmdreader
+cd ~/code_dmdreader
 ./pi-configure
 sudo reboot
 ```
+
+
+## Testing
+
+### Testing the DMD interface
 
 ### Test LED matrix (if you have one connected)
 ```
