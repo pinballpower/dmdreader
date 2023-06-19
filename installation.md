@@ -103,7 +103,7 @@ This shows that the system can read data from the DMD interface.
 ```
 cd code_dmdreader/external/rpi-rgb-led-matrix/
 make
-sudo examples-api-use/demo --led-gpio-mapping=dmdreader -D 0 --led-rows=64 --led-cols=128
+sudo examples-api-use/demo --led-gpio-mapping=dmdreader -D 0 --led-rows=32 --led-cols=128
 ```
 You need to adapt row and cols to the connected display. LED panel 1 (or both if daisy-chained) need to be connected to the upper of the two LED panel connectors
 
