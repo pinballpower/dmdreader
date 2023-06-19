@@ -27,5 +27,25 @@ Multiple LED panels can either be daisy-chained (if the option is supported by t
 
 ### Basic operating system
 
-It is recommended to install the latest "Lite" version of Raspberry Pi OS. Using the Raspberry Pi imager, you can already configure your username, password and WiFi configuration
+It is recommended to install the latest "Lite" version of Raspberry Pi OS. Using the Raspberry Pi imager, you can already configure your username, password and WiFi configuration. You should also enable SSH. Once the system has started and you can login via SSH, update the software
+```
+sudo apt-get update
+sudo apt-get -y dist-upgrade
+```
+
+### Install the DMDReader software
+
+```
+sudo apt-get install -y git
+git clone https://github.com/hifiberry/code_dmdreader
+```
+
+### Configure config.txt
+
+```
+cd code_dmdreader
+./pi-configure
+sudo reboot
+```
+
 
