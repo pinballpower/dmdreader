@@ -56,5 +56,6 @@ sudo examples-api-use/demo --led-gpio-mapping=dmdreader -D 0 --led-rows=64 --led
 ```
 You need to adapt row and cols to the connected display. LED panel 1 (or both if daisy-chained) need to be connected to the upper of the two LED panel connectors
 
+Have a look at [ledconfigs.md] for known configurations for some LED panel types
 
 
