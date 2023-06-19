@@ -37,7 +37,7 @@ sudo apt-get -y dist-upgrade
 
 ```
 sudo apt-get install -y git
-git clone https://github.com/hifiberry/code_dmdreader
+git clone --recursive https://github.com/pinballpower/code_dmdreader
 ```
 
 ### Configure config.txt
@@ -47,5 +47,14 @@ cd code_dmdreader
 ./pi-configure
 sudo reboot
 ```
+
+### Test LED matrix (if you have one connected)
+```
+cd code_dmdreader/external/rpi-rgb-led-matrix/
+make
+sudo examples-api-use/demo --led-gpio-mapping=dmdreader -D 0 --led-rows=64 --led-cols=128
+```
+You need to adapt row and cols to the connected display. LED panel 1 (or both if daisy-chained) need to be connected to the upper of the two LED panel connectors
+
 
 
